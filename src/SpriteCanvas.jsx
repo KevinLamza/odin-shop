@@ -30,7 +30,7 @@ const SpriteCanvas = (props) => {
             context.drawImage(image, 0, 0);
         };
         image.src = props.imageURL;
-    }, []);
+    }, [props.imageURL]);
 
     return <canvas ref={canvasRef} />;
 };

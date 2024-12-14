@@ -17,10 +17,16 @@ const useImageURL = (id) => {
                 return response.json();
             })
             .then((response) => {
-                console.log(response);
-                setImageURL(response['sprites']['default']);
-                setTitle(response['names']['3']['name']);
-                setDescription(response['flavor_text_entries']['0']['text']);
+                Promise.all([
+                    setImageURL(response['sprites']['default']),
+                    setTitle(response['names']['3']['name']),
+                    setDescription(
+                        response['flavor_text_entries']['0']['text'],
+                    ),
+                ]);
+                // setImageURL(response['sprites']['default']);
+                // setTitle(response['names']['3']['name']);
+                // setDescription(response['flavor_text_entries']['0']['text']);
             })
             .catch((error) => setError(error))
             .finally(() => setLoading(false));

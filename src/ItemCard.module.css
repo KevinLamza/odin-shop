@@ -6,6 +6,7 @@
     grid-template-columns: max-content 1fr;
     padding: 20px;
     align-self: start;
+    opacity: 1;
 }
 
 h2 {
