@@ -10,6 +10,7 @@ const App = () => {
     return (
         <>
             <div className={styles.background}>
+                {test()}
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <h1>WELCOME TO THE POKé MART</h1>
@@ -27,3 +28,7 @@ const App = () => {
 };
 
 export default App;
+
+function test() {
+    console.log('Blas Eier');
+}
