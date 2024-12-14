@@ -1,0 +1,12 @@
+ul {
+    background-color: white;
+    padding: 10px 40px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: -0.05rem;
+    background-color: white;
+    border: 5px solid black;
+}

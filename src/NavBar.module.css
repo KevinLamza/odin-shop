@@ -1,0 +1,29 @@
+.navBar {
+    display: flex;
+    margin: 20px 0px;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.cartButton {
+    justify-self: flex-end;
+    background-color: pink;
+}
+
+button {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: -0.05rem;
+    background-color: white;
+    border: 5px solid black;
+}
