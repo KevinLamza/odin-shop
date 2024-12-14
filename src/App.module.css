@@ -46,7 +46,7 @@ p {
 }
 
 .app {
-    display: grid;
+    display: grid; /* grid or none */
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;

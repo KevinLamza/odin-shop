@@ -2,6 +2,7 @@
     background-color: white;
     border: 5px solid black;
     display: grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
     padding: 20px;
     align-self: start;
@@ -15,4 +16,11 @@ h2 {
     font-style: normal;
     font-size: 48px;
     letter-spacing: -0.1rem;
+}
+
+canvas {
+    width: 128px;
+    height: 128px;
+    image-rendering: pixelated;
+    justify-self: center;
 }
