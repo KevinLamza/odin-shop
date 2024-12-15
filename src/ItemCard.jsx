@@ -1,7 +1,12 @@
 import styles from './ItemCard.module.css';
 import FetchImage from './FetchImage';
 
-const ItemCard = ({ currentItem, handleAddItemToCart }) => {
+const ItemCard = ({
+    currentItem,
+    handleAddItemToCart,
+    currentInput,
+    handleInputChange,
+}) => {
     return (
         <>
             <div id="test" className={styles.itemContainer}>
@@ -12,7 +17,8 @@ const ItemCard = ({ currentItem, handleAddItemToCart }) => {
                         type="number"
                         id="amount"
                         name="amount"
-                        value="1"
+                        value={currentInput}
+                        onChange={(e) => handleInputChange(e.target.value)}
                     ></input>
                     <br></br>
                     <button

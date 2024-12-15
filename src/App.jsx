@@ -1,6 +1,6 @@
 // App.jsx
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './App.module.css';
 import NavBar from './NavBar';
 import List from './List';
@@ -11,9 +11,11 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState('HOME');
     const [currentItem, setCurrentItem] = useState('1');
     const [cartItems, setCartItems] = useState([{ 1: '5' }, { 2: '4' }]);
+    const [currentInput, setCurrentInput] = useState('1');
 
     function handleListClick(id) {
         setCurrentItem(id);
+        setCurrentInput('1');
     }
 
     function handleAddItemToCart(id, amount) {
@@ -25,6 +27,10 @@ const App = () => {
         } else {
             console.log('nope');
         }
+    }
+
+    function handleInputChange(value) {
+        setCurrentInput(value);
     }
 
     return (
@@ -55,6 +61,8 @@ const App = () => {
                         <ItemCard
                             currentItem={currentItem}
                             handleAddItemToCart={handleAddItemToCart}
+                            currentInput={currentInput}
+                            handleInputChange={handleInputChange}
                         />
                     </div>
                 </div>
