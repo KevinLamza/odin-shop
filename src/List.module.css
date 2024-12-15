@@ -12,12 +12,46 @@ ul {
     opacity: 1;
 }
 
-.listButtons {
+/* .listButtons {
     display: block;
     border: none;
     padding: 0;
 }
 
 .listButtons:hover {
+    color: lightcoral;
+}
+
+.selected {
+    color: lightcoral;
+}
+
+.selected::before {
+    content: '-> ';
+    color: lightcoral;
+} */
+
+.unselectedButtons,
+.selectedButtons {
+    display: block;
+    border: none;
+    padding: 0;
+}
+
+.unselectedButtons:hover {
+    color: lightcoral;
+}
+
+.unselectedButtons::after {
+    content: ' <-';
+    visibility: hidden;
+}
+
+.selectedButtons {
+    color: lightcoral;
+}
+
+.selectedButtons::before {
+    content: '-> ';
     color: lightcoral;
 }

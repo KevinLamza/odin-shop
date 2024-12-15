@@ -1,11 +1,15 @@
 import styles from './List.module.css';
 
-const List = ({ items, handleListClick }) => {
+const List = ({ items, handleListClick, currentItem }) => {
     const keys = Object.keys(items);
     const list = keys.map((element) => (
         <button
             onClick={() => handleListClick(element)}
-            className={styles.listButtons}
+            className={
+                element === currentItem
+                    ? styles.selectedButtons
+                    : styles.unselectedButtons
+            }
             key={element}
         >
             {items[element]}

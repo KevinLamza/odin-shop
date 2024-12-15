@@ -34,7 +34,11 @@ const App = () => {
                                 : styles.app
                         }
                     >
-                        <List handleListClick={handleListClick} items={items} />
+                        <List
+                            handleListClick={handleListClick}
+                            items={items}
+                            currentItem={currentItem}
+                        />
                         <ItemCard currentItem={currentItem} />
                     </div>
                 </div>
