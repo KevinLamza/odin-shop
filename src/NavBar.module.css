@@ -27,3 +27,7 @@ button {
     background-color: white;
     border: 5px solid black;
 }
+
+.selected {
+    background-color: lightsalmon;
+}

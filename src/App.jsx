@@ -19,7 +19,10 @@ const App = () => {
                         <h1>WELCOME TO THE POKé MART</h1>
                         <p>PRESS ANY KEY TO CONTINUE</p>
                     </div>
-                    <NavBar setCurrentPage={setCurrentPage} />
+                    <NavBar
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                    />
                     <div
                         className={
                             currentPage === 'HOME'
