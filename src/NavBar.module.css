@@ -31,3 +31,7 @@ button {
 .selected {
     background-color: lightsalmon;
 }
+
+.unselected:hover {
+    border-color: lightsalmon;
+}

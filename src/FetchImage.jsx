@@ -48,7 +48,6 @@ const FetchImage = ({ id }) => {
             <div>
                 <h2>{title}</h2>
                 <p>{description}</p>
-                <button>ADD TO CART</button>
             </div>
         </>
     );

@@ -1,8 +1,7 @@
 import styles from './NavBar.module.css';
 
-const NavBar = ({ currentPage, setCurrentPage }) => {
+const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
     function handleNavClick(e) {
-        console.log(e.target.textContent);
         setCurrentPage(e.target.textContent);
     }
 
@@ -12,7 +11,9 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
                 <div className={styles.navButtons}>
                     <button
                         className={
-                            currentPage === 'HOME' ? styles.selected : null
+                            currentPage === 'HOME'
+                                ? styles.selected
+                                : styles.unselected
                         }
                         onClick={(e) => handleNavClick(e)}
                     >
@@ -20,7 +21,9 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
                     </button>
                     <button
                         className={
-                            currentPage === 'SHOP' ? styles.selected : null
+                            currentPage === 'SHOP'
+                                ? styles.selected
+                                : styles.unselected
                         }
                         onClick={(e) => handleNavClick(e)}
                     >
@@ -34,7 +37,7 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
                             : styles.cartButton
                     }
                 >
-                    CART (1)
+                    CART ({cartItems.length})
                 </button>
             </div>
         </>

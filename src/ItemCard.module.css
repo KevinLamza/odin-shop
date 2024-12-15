@@ -30,3 +30,36 @@ img {
     width: 32px;
     height: 32px;
 }
+
+form {
+    grid-column-start: span 2;
+}
+
+form label {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    letter-spacing: -0.05rem;
+    margin: 10px 20px 10px 128px;
+}
+
+form input {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    letter-spacing: -0.05rem;
+    margin: 10px 0px;
+    width: 50px;
+}
+
+form button {
+    margin-left: 128px;
+}
+
+form button:hover {
+    background-color: lightsalmon;
+}

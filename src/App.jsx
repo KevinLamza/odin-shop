@@ -9,10 +9,22 @@ import ItemCard from './ItemCard';
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState('HOME');
-    const [currentItem, setCurrentItem] = useState(1);
+    const [currentItem, setCurrentItem] = useState('1');
+    const [cartItems, setCartItems] = useState([{ 1: '5' }, { 2: '4' }]);
 
     function handleListClick(id) {
         setCurrentItem(id);
+    }
+
+    function handleAddItemToCart(id, amount) {
+        function compare(item, num) {
+            return Object.keys(item).toString() === num;
+        }
+        if (cartItems.findIndex((element) => compare(element, id)) === -1) {
+            setCartItems([...cartItems, { [id]: amount }]);
+        } else {
+            console.log('nope');
+        }
     }
 
     return (
@@ -26,6 +38,7 @@ const App = () => {
                     <NavBar
                         currentPage={currentPage}
                         setCurrentPage={setCurrentPage}
+                        cartItems={cartItems}
                     />
                     <div
                         className={
@@ -39,7 +52,10 @@ const App = () => {
                             items={items}
                             currentItem={currentItem}
                         />
-                        <ItemCard currentItem={currentItem} />
+                        <ItemCard
+                            currentItem={currentItem}
+                            handleAddItemToCart={handleAddItemToCart}
+                        />
                     </div>
                 </div>
             </div>
