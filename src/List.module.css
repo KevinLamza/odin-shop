@@ -1,6 +1,6 @@
 ul {
     background-color: white;
-    padding: 10px 40px;
+    padding: 10px 40px 10px 30px;
     font-family: 'Pixelify Sans', sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -10,4 +10,14 @@ ul {
     background-color: white;
     border: 5px solid black;
     opacity: 1;
+}
+
+.listButtons {
+    display: block;
+    border: none;
+    padding: 0;
+}
+
+.listButtons:hover {
+    color: lightcoral;
 }

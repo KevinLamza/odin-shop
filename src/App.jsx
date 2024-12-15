@@ -9,11 +9,15 @@ import ItemCard from './ItemCard';
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState('HOME');
+    const [currentItem, setCurrentItem] = useState(1);
+
+    function handleListClick(id) {
+        setCurrentItem(id);
+    }
 
     return (
         <>
             <div className={styles.background}>
-                {test()}
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <h1>WELCOME TO THE POKé MART</h1>
@@ -30,8 +34,8 @@ const App = () => {
                                 : styles.app
                         }
                     >
-                        <List items={items} />
-                        <ItemCard />
+                        <List handleListClick={handleListClick} items={items} />
+                        <ItemCard currentItem={currentItem} />
                     </div>
                 </div>
             </div>
@@ -40,7 +44,3 @@ const App = () => {
 };
 
 export default App;
-
-function test() {
-    console.log('Blas Eier');
-}

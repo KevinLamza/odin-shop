@@ -48,7 +48,7 @@ p {
 
 .app {
     display: grid; /* grid or none */
-    grid-template-columns: max-content max-content;
+    grid-template-columns: max-content 800px;
     gap: 20px;
     width: 100%;
 }
