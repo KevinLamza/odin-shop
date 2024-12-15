@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
-.removeScrollbar {
-    padding-left: calc(100vw - 100%);
-    background-color: pink;
-}
-
 .background {
     background-image: url('./assets/pokemart_interior.png');
     background-size: cover;
@@ -53,9 +48,13 @@ p {
 
 .app {
     display: grid; /* grid or none */
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: max-content max-content;
     gap: 20px;
     width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /* #root {

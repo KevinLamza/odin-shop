@@ -12,21 +12,23 @@ const App = () => {
 
     return (
         <>
-            <div className={styles.removeScrollbar}>
-                <div className={styles.background}>
-                    {test()}
-                    <div className={styles.container}>
-                        <div className={styles.header}>
-                            <h1>WELCOME TO THE POKé MART</h1>
-                            <p>PRESS ANY KEY TO CONTINUE</p>
-                        </div>
-                        <NavBar setCurrentPage={setCurrentPage} />
-                        {currentPage !== 'HOME' ? (
-                            <div className={styles.app}>
-                                <List items={items} />
-                                <ItemCard />
-                            </div>
-                        ) : null}
+            <div className={styles.background}>
+                {test()}
+                <div className={styles.container}>
+                    <div className={styles.header}>
+                        <h1>WELCOME TO THE POKé MART</h1>
+                        <p>PRESS ANY KEY TO CONTINUE</p>
+                    </div>
+                    <NavBar setCurrentPage={setCurrentPage} />
+                    <div
+                        className={
+                            currentPage === 'HOME'
+                                ? styles.app + ' ' + styles.hidden
+                                : styles.app
+                        }
+                    >
+                        <List items={items} />
+                        <ItemCard />
                     </div>
                 </div>
             </div>
