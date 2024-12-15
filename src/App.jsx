@@ -22,11 +22,20 @@ const App = () => {
         function compare(item, num) {
             return Object.keys(item).toString() === num;
         }
-        if (cartItems.findIndex((element) => compare(element, id)) === -1) {
+        const index = cartItems.findIndex((element) => compare(element, id));
+        if (index === -1) {
             setCartItems([...cartItems, { [id]: amount }]);
         } else {
-            console.log('nope');
+            let updatedCart = [...cartItems];
+            updatedCart[index] = {
+                ...updatedCart[index],
+                [id]: (
+                    Number(updatedCart[index][id]) + Number(amount)
+                ).toString(),
+            };
+            setCartItems(updatedCart);
         }
+        console.log(cartItems);
     }
 
     function handleInputChange(value) {

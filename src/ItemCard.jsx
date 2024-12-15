@@ -25,7 +25,7 @@ const ItemCard = ({
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
-                            handleAddItemToCart(currentItem, '1');
+                            handleAddItemToCart(currentItem, currentInput);
                         }}
                     >
                         ADD TO CART
