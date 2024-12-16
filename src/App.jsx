@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from './App.module.css';
 import NavBar from './NavBar';
 import List from './List';
@@ -15,13 +15,16 @@ const App = () => {
     const [cartItems, setCartItems] = useState([{ 1: '5' }, { 2: '4' }]);
     const [currentInput, setCurrentInput] = useState('1');
     const { id } = useParams();
+    const navigate = useNavigate();
 
     // Ist das hier notwendig?
-    useEffect(() => handleListClick(id), [id]);
+    // useEffect(() => handleListClick(id), [id]);
 
     function handleListClick(id) {
         setCurrentItem(id);
         setCurrentInput('1');
+        const path = '/shop/' + id;
+        navigate(path);
     }
 
     function handleAddItemToCart(id, amount) {
@@ -60,6 +63,7 @@ const App = () => {
                         currentPage={currentPage}
                         setCurrentPage={setCurrentPage}
                         cartItems={cartItems}
+                        setCurrentItem={setCurrentItem}
                     />
                     <Outlet
                         context={{

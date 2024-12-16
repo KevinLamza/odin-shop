@@ -1,14 +1,16 @@
 import styles from './NavBar.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
+const NavBar = ({ currentPage, setCurrentPage, cartItems, setCurrentItem }) => {
     const navigate = useNavigate();
 
     function handleNavClick(path) {
         // setCurrentPage(e.target.textContent);
         if (path === '/') setCurrentPage('HOME');
-        else if (path === '/shop/1') setCurrentPage('SHOP');
-        else if (path === '/checkout') setCurrentPage('CHECKOUT');
+        else if (path === '/shop/1') {
+            setCurrentItem('1');
+            setCurrentPage('SHOP');
+        } else if (path === '/checkout') setCurrentPage('CHECKOUT');
         navigate(path);
     }
 

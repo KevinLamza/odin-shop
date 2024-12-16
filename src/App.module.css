@@ -17,7 +17,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: max-content;
+    /* width: max-content; */
+    width: 1200px;
 }
 
 .header {
