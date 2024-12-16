@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './App.module.css';
 import NavBar from './NavBar';
 import List from './List';
@@ -13,6 +14,9 @@ const App = () => {
     const [currentItem, setCurrentItem] = useState('1');
     const [cartItems, setCartItems] = useState([{ 1: '5' }, { 2: '4' }]);
     const [currentInput, setCurrentInput] = useState('1');
+    const { id } = useParams();
+
+    useEffect(() => handleListClick(id), [id]);
 
     function handleListClick(id) {
         setCurrentItem(id);

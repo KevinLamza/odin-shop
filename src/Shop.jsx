@@ -1,4 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import List from './List';
 import ItemCard from './ItemCard';
 
@@ -11,6 +12,7 @@ const Shop = () => {
         currentInput,
         handleInputChange,
     } = useOutletContext();
+    // const { id } = useParams();
     return (
         <>
             <List
