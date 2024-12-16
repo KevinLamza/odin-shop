@@ -16,6 +16,7 @@ const App = () => {
     const [currentInput, setCurrentInput] = useState('1');
     const { id } = useParams();
 
+    // Ist das hier notwendig?
     useEffect(() => handleListClick(id), [id]);
 
     function handleListClick(id) {

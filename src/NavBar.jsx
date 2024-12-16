@@ -6,6 +6,9 @@ const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
 
     function handleNavClick(path) {
         // setCurrentPage(e.target.textContent);
+        if (path === '/') setCurrentPage('HOME');
+        else if (path === '/shop/1') setCurrentPage('SHOP');
+        else if (path === '/checkout') setCurrentPage('CHECKOUT');
         navigate(path);
     }
 
@@ -40,7 +43,7 @@ const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
                             ? styles.cartButton + ' ' + styles.selected
                             : styles.cartButton
                     }
-                    onClick={() => handleNavClick('checkout')}
+                    onClick={() => handleNavClick('/checkout')}
                 >
                     CART ({cartItems.length})
                 </button>
