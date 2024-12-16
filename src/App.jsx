@@ -1,6 +1,7 @@
 // App.jsx
 
 import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 import styles from './App.module.css';
 import NavBar from './NavBar';
 import List from './List';
@@ -54,6 +55,16 @@ const App = () => {
                         currentPage={currentPage}
                         setCurrentPage={setCurrentPage}
                         cartItems={cartItems}
+                    />
+                    <Outlet
+                        context={{
+                            handleListClick,
+                            items,
+                            currentItem,
+                            handleAddItemToCart,
+                            currentInput,
+                            handleInputChange,
+                        }}
                     />
                     <div
                         className={
