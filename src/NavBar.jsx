@@ -1,8 +1,12 @@
 import styles from './NavBar.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
-    function handleNavClick(e) {
-        setCurrentPage(e.target.textContent);
+    const navigate = useNavigate();
+
+    function handleNavClick(path) {
+        // setCurrentPage(e.target.textContent);
+        navigate(path);
     }
 
     return (
@@ -15,7 +19,7 @@ const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
                                 ? styles.selected
                                 : styles.unselected
                         }
-                        onClick={(e) => handleNavClick(e)}
+                        onClick={() => handleNavClick('/')}
                     >
                         HOME
                     </button>
@@ -25,7 +29,7 @@ const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
                                 ? styles.selected
                                 : styles.unselected
                         }
-                        onClick={(e) => handleNavClick(e)}
+                        onClick={() => handleNavClick('/shop/1')}
                     >
                         SHOP
                     </button>
@@ -36,6 +40,7 @@ const NavBar = ({ currentPage, setCurrentPage, cartItems }) => {
                             ? styles.cartButton + ' ' + styles.selected
                             : styles.cartButton
                     }
+                    onClick={() => handleNavClick('checkout')}
                 >
                     CART ({cartItems.length})
                 </button>

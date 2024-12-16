@@ -70,7 +70,7 @@ const App = () => {
                             handleInputChange,
                         }}
                     />
-                    <div
+                    {/* <div
                         className={
                             currentPage === 'HOME'
                                 ? styles.app + ' ' + styles.hidden
@@ -88,7 +88,7 @@ const App = () => {
                             currentInput={currentInput}
                             handleInputChange={handleInputChange}
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
