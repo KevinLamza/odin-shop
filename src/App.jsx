@@ -18,7 +18,17 @@ const App = () => {
     const navigate = useNavigate();
 
     // Ist das hier notwendig?
-    // useEffect(() => handleListClick(id), [id]);
+    useEffect(() => {
+        if (Object.prototype.hasOwnProperty.call(items, id)) {
+            setCurrentItem(id);
+        } else if (
+            !Object.prototype.hasOwnProperty.call(items, id) &&
+            typeof id !== 'undefined'
+        ) {
+            setCurrentItem('1');
+            navigate('/shop/1');
+        }
+    }, [id, navigate]);
 
     function handleListClick(id) {
         setCurrentItem(id);

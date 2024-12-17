@@ -17,6 +17,10 @@
     background-color: pink;
 }
 
+.cartButton:hover {
+    background-color: rgb(254, 141, 160);
+}
+
 button {
     font-family: 'Pixelify Sans', sans-serif;
     font-optical-sizing: auto;
