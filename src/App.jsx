@@ -17,7 +17,9 @@ const App = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // Ist das hier notwendig?
+    // check if the dynamic segment is part of the items object
+    // (and therefore a valid segment),
+    // else set item to 1 and navigate to that path
     useEffect(() => {
         if (Object.prototype.hasOwnProperty.call(items, id)) {
             setCurrentItem(id);
@@ -54,7 +56,6 @@ const App = () => {
             };
             setCartItems(updatedCart);
         }
-        console.log(cartItems);
     }
 
     function handleInputChange(value) {
@@ -85,25 +86,6 @@ const App = () => {
                             handleInputChange,
                         }}
                     />
-                    {/* <div
-                        className={
-                            currentPage === 'HOME'
-                                ? styles.app + ' ' + styles.hidden
-                                : styles.app
-                        }
-                    >
-                        <List
-                            handleListClick={handleListClick}
-                            items={items}
-                            currentItem={currentItem}
-                        />
-                        <ItemCard
-                            currentItem={currentItem}
-                            handleAddItemToCart={handleAddItemToCart}
-                            currentInput={currentInput}
-                            handleInputChange={handleInputChange}
-                        />
-                    </div> */}
                 </div>
             </div>
         </>
