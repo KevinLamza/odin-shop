@@ -1,13 +1,8 @@
-// App.jsx
-
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Outlet } from 'react-router-dom';
 import styles from './App.module.css';
 import NavBar from './NavBar';
-import List from './List';
 import { items } from './items';
-import ItemCard from './ItemCard';
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState('HOME');
@@ -81,6 +76,7 @@ const App = () => {
                             handleListClick,
                             items,
                             currentItem,
+                            cartItems,
                             handleAddItemToCart,
                             currentInput,
                             handleInputChange,
