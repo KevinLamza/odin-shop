@@ -2,51 +2,59 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Outlet } from 'react-router-dom';
 import styles from './App.module.css';
 import NavBar from './NavBar';
-import { items } from './items';
+import { validIds } from './validIds';
 
 const App = () => {
+    // can be 'HOME', 'SHOP', 'CHECKOUT', used only for CSS
     const [currentPage, setCurrentPage] = useState('HOME');
-    const [currentItem, setCurrentItem] = useState('1');
-    const [cartItems, setCartItems] = useState([{ 1: '5' }, { 2: '4' }]);
+
+    // refers to the Id of the item
+    const [currentItem, setCurrentItem] = useState(1);
+
+    // some default items to check functionality easier
+    const [cartItems, setCartItems] = useState([
+        { id: 1, amount: 5 },
+        { id: 2, amount: 4 },
+    ]);
+
     const [currentInput, setCurrentInput] = useState('1');
-    const { id } = useParams();
+    const { idString } = useParams();
+    const id = Number(idString);
     const navigate = useNavigate();
 
     // check if the dynamic segment is part of the items object
     // (and therefore a valid segment),
     // else set item to 1 and navigate to that path
     useEffect(() => {
-        if (Object.prototype.hasOwnProperty.call(items, id)) {
+        if (validIds.includes(id)) {
             setCurrentItem(id);
-        } else if (
-            !Object.prototype.hasOwnProperty.call(items, id) &&
-            typeof id !== 'undefined'
-        ) {
-            setCurrentItem('1');
+        } else if (!validIds.includes(id) && typeof id !== 'undefined') {
+            setCurrentItem(1);
             navigate('/shop/1');
         }
     }, [id, navigate]);
 
     function handleListClick(id) {
+        console.log(id);
         setCurrentItem(id);
-        setCurrentInput('1');
+        setCurrentInput(1);
         const path = '/shop/' + id;
         navigate(path);
     }
 
     function handleAddItemToCart(id, amount) {
-        function compare(item, num) {
-            return Object.keys(item).toString() === num;
+        function compare(element, id) {
+            return element['id'] === id;
         }
         const index = cartItems.findIndex((element) => compare(element, id));
         if (index === -1) {
-            setCartItems([...cartItems, { [id]: amount }]);
+            setCartItems([...cartItems, { id, amount }]);
         } else {
             let updatedCart = [...cartItems];
             updatedCart[index] = {
                 ...updatedCart[index],
-                [id]: (
-                    Number(updatedCart[index][id]) + Number(amount)
+                amount: (
+                    Number(updatedCart[index][amount]) + Number(amount)
                 ).toString(),
             };
             setCartItems(updatedCart);
@@ -74,7 +82,7 @@ const App = () => {
                     <Outlet
                         context={{
                             handleListClick,
-                            items,
+                            validIds,
                             currentItem,
                             cartItems,
                             handleAddItemToCart,

@@ -1,5 +1,5 @@
 import styles from './ItemCard.module.css';
-import FetchImage from './FetchImage';
+import FetchItemBlock from './FetchItemBlock';
 
 const ItemCard = ({
     currentItem,
@@ -10,7 +10,7 @@ const ItemCard = ({
     return (
         <>
             <div id="test" className={styles.itemContainer}>
-                <FetchImage id={currentItem} />
+                <FetchItemBlock id={currentItem} />
                 <form>
                     <label htmlFor="amount">Amount:</label>
                     <input

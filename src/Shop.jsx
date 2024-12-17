@@ -7,19 +7,17 @@ import styles from './Shop.module.css';
 const Shop = () => {
     const {
         handleListClick,
-        items,
+        validIds,
         currentItem,
         handleAddItemToCart,
         currentInput,
         handleInputChange,
     } = useOutletContext();
-    console.log(currentItem);
-    // const { id } = useParams();
     return (
         <div className={styles.app}>
             <List
                 handleListClick={handleListClick}
-                items={items}
+                validIds={validIds}
                 currentItem={currentItem}
             />
             <ItemCard

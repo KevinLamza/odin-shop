@@ -8,7 +8,7 @@ const NavBar = ({ currentPage, setCurrentPage, cartItems, setCurrentItem }) => {
         // setCurrentPage(e.target.textContent);
         if (path === '/') setCurrentPage('HOME');
         else if (path === '/shop/1') {
-            setCurrentItem('1');
+            setCurrentItem(1);
             setCurrentPage('SHOP');
         } else if (path === '/checkout') setCurrentPage('CHECKOUT');
         navigate(path);

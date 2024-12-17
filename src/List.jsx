@@ -1,20 +1,23 @@
 import styles from './List.module.css';
+import useFetchData from './useFetchData';
 
-const List = ({ items, handleListClick, currentItem }) => {
-    const keys = Object.keys(items);
-    const list = keys.map((element) => (
-        <button
-            onClick={() => handleListClick(element)}
-            className={
-                element === currentItem
-                    ? styles.selectedButtons
-                    : styles.unselectedButtons
-            }
-            key={element}
-        >
-            {items[element]}
-        </button>
-    ));
+const List = ({ validIds, handleListClick, currentItem }) => {
+    const list = validIds.map((element) => {
+        const { title } = useFetchData(element);
+        return (
+            <button
+                onClick={() => handleListClick(element)}
+                className={
+                    element === currentItem
+                        ? styles.selectedButtons
+                        : styles.unselectedButtons
+                }
+                key={element}
+            >
+                {title}
+            </button>
+        );
+    });
     return (
         <>
             <ul>{list}</ul>
