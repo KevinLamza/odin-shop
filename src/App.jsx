@@ -28,7 +28,9 @@ const App = () => {
     useEffect(() => {
         if (validIds.includes(id)) {
             setCurrentItem(id);
-        } else if (!validIds.includes(id) && typeof id !== 'undefined') {
+        } else if (!validIds.includes(id) && id === id) {
+            console.log(typeof id);
+            console.log('hey');
             setCurrentItem(1);
             navigate('/shop/1');
         }
