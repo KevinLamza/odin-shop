@@ -33,3 +33,11 @@ tfoot {
 h2 {
     width: max-content;
 }
+
+button {
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: salmon;
+}

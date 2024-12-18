@@ -26,6 +26,10 @@ const Checkout = () => {
         }, 0);
     };
 
+    const handleBuy = () => {
+        alert('Purchase succesful!');
+    };
+
     return (
         <>
             <div className={styles.checkout}>
@@ -33,43 +37,48 @@ const Checkout = () => {
                 {cartItems.length === 0 ? (
                     'NO ITEMS IN CART'
                 ) : (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">Item</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {cartItems.map((item) => (
-                                <CheckoutItem
-                                    key={item['id']}
-                                    item={item}
-                                    cartItems={cartItems}
-                                    setCartItems={setCartItems}
-                                />
-                            ))}
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th scope="row" colSpan="2">
-                                    Total price:
-                                </th>
-                                <td>
-                                    <TotalPrice
-                                        ids={cartItems.map((item) => item.id)}
-                                        onFetchedData={handleFetchedPrices}
+                    <>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {cartItems.map((item) => (
+                                    <CheckoutItem
+                                        key={item['id']}
+                                        item={item}
+                                        cartItems={cartItems}
+                                        setCartItems={setCartItems}
                                     />
-                                    <strong>
-                                        {loading
-                                            ? 'Loading...'
-                                            : `$${total().toFixed(2)}`}
-                                    </strong>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                ))}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="row" colSpan="2">
+                                        Total price:
+                                    </th>
+                                    <td>
+                                        <TotalPrice
+                                            ids={cartItems.map(
+                                                (item) => item.id,
+                                            )}
+                                            onFetchedData={handleFetchedPrices}
+                                        />
+                                        <strong>
+                                            {loading
+                                                ? 'Loading...'
+                                                : `$${total().toFixed(2)}`}
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <button onClick={handleBuy}>BUY</button>
+                    </>
                 )}
             </div>
         </>
