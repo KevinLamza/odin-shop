@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 // ItemList component that fetches prices, sums them up, and renders the total
 function TotalPrice({ ids, onFetchedData }) {
+    if (ids.length === 0) return;
+
     const [loading, setLoading] = useState(true); // Loading state
     const [error, setError] = useState(null); // Error state
 

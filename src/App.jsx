@@ -12,10 +12,7 @@ const App = () => {
     const [currentItem, setCurrentItem] = useState(1);
 
     // some default items to check functionality easier
-    const [cartItems, setCartItems] = useState([
-        { id: 1, amount: 5 },
-        { id: 2, amount: 4 },
-    ]);
+    const [cartItems, setCartItems] = useState([]);
 
     const [currentInput, setCurrentInput] = useState('1');
     const [wobble, setWobble] = useState(0);

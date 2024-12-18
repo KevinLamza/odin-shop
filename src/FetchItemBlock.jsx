@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import SpriteCanvas from './SpriteCanvas.jsx';
 import useFetchData from './useFetchData.jsx';
 import styles from './FetchItemBlock.module.css';
