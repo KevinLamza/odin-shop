@@ -1,0 +1,8 @@
+.checkoutButton {
+    font-size: 16px;
+    border: 3px solid black;
+}
+
+.checkoutButton:hover {
+    background-color: salmon;
+}

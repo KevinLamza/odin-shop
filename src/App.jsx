@@ -32,6 +32,7 @@ const App = () => {
             console.log(typeof id);
             console.log('hey');
             setCurrentItem(1);
+            setCurrentInput(1);
             navigate('/shop/1');
         }
     }, [id, navigate]);
@@ -80,6 +81,7 @@ const App = () => {
                         setCurrentPage={setCurrentPage}
                         cartItems={cartItems}
                         setCurrentItem={setCurrentItem}
+                        setCurrentInput={setCurrentInput}
                     />
                     <Outlet
                         context={{
@@ -87,6 +89,7 @@ const App = () => {
                             validIds,
                             currentItem,
                             cartItems,
+                            setCartItems,
                             handleAddItemToCart,
                             currentInput,
                             handleInputChange,
