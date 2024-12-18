@@ -48,18 +48,18 @@ const App = () => {
 
     function handleAddItemToCart(id, amount) {
         function compare(element, id) {
+            // console.log(element['id'] === id);
             return element['id'] === id;
         }
         const index = cartItems.findIndex((element) => compare(element, id));
+        console.log(index);
         if (index === -1) {
             setCartItems([...cartItems, { id, amount }]);
         } else {
             let updatedCart = [...cartItems];
             updatedCart[index] = {
                 ...updatedCart[index],
-                amount: (
-                    Number(updatedCart[index][amount]) + Number(amount)
-                ).toString(),
+                amount: Number(updatedCart[index]['amount']) + Number(amount),
             };
             setCartItems(updatedCart);
         }
