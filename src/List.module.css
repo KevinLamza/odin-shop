@@ -16,25 +16,6 @@ ul {
     overflow-x: hidden;
 }
 
-/* .listButtons {
-    display: block;
-    border: none;
-    padding: 0;
-}
-
-.listButtons:hover {
-    color: lightcoral;
-}
-
-.selected {
-    color: lightcoral;
-}
-
-.selected::before {
-    content: '-> ';
-    color: lightcoral;
-} */
-
 .unselectedButtons,
 .selectedButtons {
     display: block;

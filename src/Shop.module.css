@@ -4,3 +4,36 @@
     gap: 20px;
     width: 100%;
 }
+
+@media (max-width: 992px) {
+    .app {
+        display: grid; /* grid or none */
+        grid-template-columns: max-content 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .app {
+        display: grid; /* grid or none */
+        grid-template-rows: max-content max-content;
+        grid-template-columns: 100%;
+        gap: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .app {
+        display: grid; /* grid or none */
+        grid-template-rows: max-content max-content;
+        grid-template-columns: 100%;
+        gap: 20px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+}
