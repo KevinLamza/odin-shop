@@ -1,14 +1,30 @@
 import { useOutletContext } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, use } from 'react';
 import styles from './Checkout.module.css';
 import CheckoutItem from './CheckoutItem';
-import useFetchData from './useFetchData';
+import TotalPrice from './TotalPrice';
 
 const Checkout = () => {
     const { cartItems, setCartItems } = useOutletContext();
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [prices, setPrices] = useState([]); // State to store fetched prices
+    const [loading, setLoading] = useState(true); // Loading state for prices
+    const [error, setError] = useState(null); // Error state for fetching prices
 
-    console.log(totalPrice);
+    // Callback to handle fetched prices from TotalPrice component
+    const handleFetchedPrices = (fetchedPrices) => {
+        setPrices(fetchedPrices); // Store the fetched prices
+        setLoading(false); // Once fetched, stop the loading state
+    };
+
+    // Calculate total price once prices are fetched
+    const total = () => {
+        if (prices.length === 0) return 0; // If prices are empty, return 0
+
+        // Calculate total by multiplying price * amount for each cart item
+        return cartItems.reduce((totalPrice, item, index) => {
+            return totalPrice + item.amount * prices[index];
+        }, 0);
+    };
 
     return (
         <>
@@ -30,8 +46,6 @@ const Checkout = () => {
                                 item={item}
                                 cartItems={cartItems}
                                 setCartItems={setCartItems}
-                                totalPrice={totalPrice}
-                                setTotalPrice={setTotalPrice}
                             />
                         ))}
                     </tbody>
@@ -40,7 +54,17 @@ const Checkout = () => {
                             <th scope="row" colSpan="2">
                                 Total price:
                             </th>
-                            <td>{'???'}G</td>
+                            <td>
+                                <TotalPrice
+                                    ids={cartItems.map((item) => item.id)}
+                                    onFetchedData={handleFetchedPrices}
+                                />
+                                <strong>
+                                    {loading
+                                        ? 'Loading...'
+                                        : `$${total().toFixed(2)}`}
+                                </strong>
+                            </td>
                         </tr>
                     </tfoot>
                 </table>

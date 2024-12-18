@@ -34,8 +34,6 @@ const CheckoutItem = ({
         return arr;
     }
 
-    useEffect(() => setTotalPrice(totalPrice + amount * price), []);
-
     return (
         <>
             <tr>
