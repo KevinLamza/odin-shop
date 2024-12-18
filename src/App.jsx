@@ -14,7 +14,7 @@ const App = () => {
     // some default items to check functionality easier
     const [cartItems, setCartItems] = useState([]);
 
-    const [currentInput, setCurrentInput] = useState('1');
+    const [currentInput, setCurrentInput] = useState(1);
     const [wobble, setWobble] = useState(0);
     const { idString } = useParams();
     const id = Number(idString);
@@ -63,7 +63,7 @@ const App = () => {
     }
 
     function handleInputChange(value) {
-        setCurrentInput(value);
+        setCurrentInput(Number(value));
     }
 
     return (

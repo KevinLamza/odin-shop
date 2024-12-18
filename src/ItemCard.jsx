@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './ItemCard.module.css';
 import FetchItemBlock from './FetchItemBlock';
 
@@ -36,6 +37,14 @@ const ItemCard = ({
             </div>
         </>
     );
+};
+
+ItemCard.propTypes = {
+    currentItem: PropTypes.number,
+    handleAddItemToCart: PropTypes.func,
+    currentInput: PropTypes.number,
+    handleInputChange: PropTypes.func,
+    setWobble: PropTypes.func,
 };
 
 export default ItemCard;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './NavBar.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -55,7 +56,7 @@ const NavBar = ({
                             : styles.cartButton
                     }
                     onAnimationEnd={() => setWobble(0)}
-                    wobble={wobble}
+                    data-wobble={wobble}
                     onClick={() => handleNavClick('/checkout')}
                 >
                     CART ({cartItems.length})
@@ -63,6 +64,16 @@ const NavBar = ({
             </div>
         </>
     );
+};
+
+NavBar.propTypes = {
+    currentPage: PropTypes.string,
+    setCurrentPage: PropTypes.func,
+    cartItems: PropTypes.arrayOf(PropTypes.object),
+    setCurrentItem: PropTypes.func,
+    setCurrentInput: PropTypes.func,
+    wobble: PropTypes.number,
+    setWobble: PropTypes.func,
 };
 
 export default NavBar;

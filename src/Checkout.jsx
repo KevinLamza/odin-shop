@@ -1,5 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
-import { useState, use } from 'react';
+import { useState } from 'react';
 import styles from './Checkout.module.css';
 import CheckoutItem from './CheckoutItem';
 import TotalPrice from './TotalPrice';
@@ -8,7 +8,6 @@ const Checkout = () => {
     const { cartItems, setCartItems } = useOutletContext();
     const [prices, setPrices] = useState([]); // State to store fetched prices
     const [loading, setLoading] = useState(true); // Loading state for prices
-    const [error, setError] = useState(null); // Error state for fetching prices
 
     // Callback to handle fetched prices from TotalPrice component
     const handleFetchedPrices = (fetchedPrices) => {
@@ -77,7 +76,12 @@ const Checkout = () => {
                                 </tr>
                             </tfoot>
                         </table>
-                        <button onClick={handleBuy}>BUY</button>
+                        <button
+                            className={styles.checkoutButton}
+                            onClick={handleBuy}
+                        >
+                            BUY
+                        </button>
                     </>
                 )}
             </div>

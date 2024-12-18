@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import SpriteCanvas from './SpriteCanvas.jsx';
 import useFetchData from './useFetchData.jsx';
 import styles from './FetchItemBlock.module.css';
@@ -20,6 +21,10 @@ const FetchItemBlock = ({ id }) => {
             </div>
         </>
     );
+};
+
+FetchItemBlock.propTypes = {
+    id: PropTypes.number,
 };
 
 export default FetchItemBlock;

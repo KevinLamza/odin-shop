@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import useFetchData from './useFetchData';
 import styles from './CheckoutItem.module.css';
 
@@ -19,7 +20,8 @@ const CheckoutItem = ({ item, cartItems, setCartItems }) => {
             // Keep looping as long as i is >= 0
             if (
                 arr[i] && // Check if the element at index i exists
-                arr[i].hasOwnProperty(attr) && // Check if the element has the specified attribute
+                Object.prototype.hasOwnProperty.call(arr[i], attr) &&
+                // arr[i].hasOwnProperty(attr) && // Check if the element has the specified attribute
                 arguments.length > 2 && // Ensure there are at least 3 arguments passed
                 arr[i][attr] === value // Check if the value of the attribute matches the specified value
             ) {
@@ -47,6 +49,12 @@ const CheckoutItem = ({ item, cartItems, setCartItems }) => {
             </tr>
         </>
     );
+};
+
+CheckoutItem.propTypes = {
+    setCartItems: PropTypes.func,
+    cartItems: PropTypes.arrayOf(PropTypes.object),
+    item: PropTypes.object,
 };
 
 export default CheckoutItem;

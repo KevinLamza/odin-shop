@@ -34,10 +34,10 @@ h2 {
     width: max-content;
 }
 
-button {
+.checkoutButton {
     margin-top: 30px;
 }
 
-button:hover {
+.checkoutButton:hover {
     background-color: salmon;
 }

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useRef, useEffect } from 'react';
 
 const SpriteCanvas = (props) => {
@@ -17,6 +18,10 @@ const SpriteCanvas = (props) => {
     }, [props.imageURL]);
 
     return <canvas ref={canvasRef} />;
+};
+
+SpriteCanvas.propTypes = {
+    imageURL: PropTypes.string,
 };
 
 export default SpriteCanvas;

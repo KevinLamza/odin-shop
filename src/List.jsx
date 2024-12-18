@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './List.module.css';
 import useFetchData from './useFetchData';
 
@@ -23,6 +24,12 @@ const List = ({ validIds, handleListClick, currentItem }) => {
             <ul>{list}</ul>
         </>
     );
+};
+
+List.propTypes = {
+    validIds: PropTypes.arrayOf(PropTypes.number),
+    handleListClick: PropTypes.func,
+    currentItem: PropTypes.number,
 };
 
 export default List;

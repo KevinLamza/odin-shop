@@ -40,7 +40,7 @@ button {
     border-color: lightsalmon;
 }
 
-button[wobble='1'] {
+button[data-wobble='1'] {
     animation: wobble 0.5s 1;
 }
 
