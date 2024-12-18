@@ -7,6 +7,8 @@ const NavBar = ({
     cartItems,
     setCurrentItem,
     setCurrentInput,
+    wobble,
+    setWobble,
 }) => {
     const navigate = useNavigate();
 
@@ -52,6 +54,8 @@ const NavBar = ({
                             ? styles.cartButton + ' ' + styles.selected
                             : styles.cartButton
                     }
+                    onAnimationEnd={() => setWobble(0)}
+                    wobble={wobble}
                     onClick={() => handleNavClick('/checkout')}
                 >
                     CART ({cartItems.length})

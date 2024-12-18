@@ -18,6 +18,7 @@ const App = () => {
     ]);
 
     const [currentInput, setCurrentInput] = useState('1');
+    const [wobble, setWobble] = useState(0);
     const { idString } = useParams();
     const id = Number(idString);
     const navigate = useNavigate();
@@ -82,6 +83,8 @@ const App = () => {
                         cartItems={cartItems}
                         setCurrentItem={setCurrentItem}
                         setCurrentInput={setCurrentInput}
+                        wobble={wobble}
+                        setWobble={setWobble}
                     />
                     <Outlet
                         context={{
@@ -93,6 +96,7 @@ const App = () => {
                             handleAddItemToCart,
                             currentInput,
                             handleInputChange,
+                            setWobble,
                         }}
                     />
                 </div>

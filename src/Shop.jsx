@@ -12,6 +12,7 @@ const Shop = () => {
         handleAddItemToCart,
         currentInput,
         handleInputChange,
+        setWobble,
     } = useOutletContext();
     return (
         <div className={styles.app}>
@@ -25,6 +26,7 @@ const Shop = () => {
                 handleAddItemToCart={handleAddItemToCart}
                 currentInput={currentInput}
                 handleInputChange={handleInputChange}
+                setWobble={setWobble}
             />
         </div>
     );

@@ -6,6 +6,7 @@ const ItemCard = ({
     handleAddItemToCart,
     currentInput,
     handleInputChange,
+    setWobble,
 }) => {
     return (
         <>
@@ -25,6 +26,7 @@ const ItemCard = ({
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
+                            setWobble(1);
                             handleAddItemToCart(currentItem, currentInput);
                         }}
                     >
