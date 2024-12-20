@@ -1,72 +1,73 @@
 .itemContainer {
-    background-color: white;
-    border: 5px solid black;
-    display: grid;
-    /* gap: 20px; */
-    grid-template-columns: max-content 1fr;
-    padding: 20px;
-    align-self: start;
-    opacity: 1;
-    width: 100%;
+	background-color: white;
+	border: 5px solid black;
+	display: grid;
+	/* gap: 20px; */
+	grid-template-columns: max-content 1fr;
+	padding: 20px;
+	align-self: start;
+	opacity: 1;
+	width: 100%;
 }
 
 h2 {
-    /* font-family: 'VT323', monospace; */
-    font-family: 'Pixelify Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 48px;
-    letter-spacing: -0.1rem;
+	/* font-family: 'VT323', monospace; */
+	font-family: 'Pixelify Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 3rem;
+	letter-spacing: -0.1rem;
 }
 
 canvas {
-    width: 128px;
-    height: 128px;
-    image-rendering: pixelated;
-    /* justify-self: center; */
+	width: 128px;
+	height: 128px;
+	image-rendering: pixelated;
+	/* justify-self: center; */
 }
 
 img {
-    width: 32px;
-    height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 form {
-    grid-column-start: span 2;
+	grid-column-start: span 2;
 }
 
 form label {
-    font-family: 'Pixelify Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    letter-spacing: -0.05rem;
-    margin: 10px 20px 10px 128px;
+	font-family: 'Pixelify Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.5rem;
+	letter-spacing: -0.05rem;
+	margin: 10px 20px 10px 128px;
 }
 
 form input {
-    font-family: 'Pixelify Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    letter-spacing: -0.05rem;
-    margin: 10px 0px;
-    width: 64px;
+	font-family: 'Pixelify Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.5rem;
+	letter-spacing: -0.05rem;
+	margin: 10px 0px;
+	width: 64px;
 }
 
 form button {
-    margin-left: 128px;
+	margin-left: 128px;
 }
 
-form button:hover {
-    background-color: lightsalmon;
+form button:hover,
+form button:focus {
+	background-color: lightsalmon;
 }
 
 @media (max-width: 992px) {
-    h2 {
-        font-size: 40px;
-    }
+	h2 {
+		font-size: 2.5rem;
+	}
 }

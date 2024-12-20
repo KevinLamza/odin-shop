@@ -15,13 +15,15 @@ const SpriteCanvas = (props) => {
             context.drawImage(image, 0, 0);
         };
         image.src = props.imageURL;
-    }, [props.imageURL]);
+        image.alt = 'picture of ' + props.title;
+    }, [props.imageURL, props.title]);
 
     return <canvas ref={canvasRef} />;
 };
 
 SpriteCanvas.propTypes = {
     imageURL: PropTypes.string,
+    title: PropTypes.string,
 };
 
 export default SpriteCanvas;

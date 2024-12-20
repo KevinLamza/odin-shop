@@ -1,42 +1,45 @@
 ul {
-    --number-of-items: 9;
-    background-color: white;
-    padding: 10px 40px 10px 30px;
-    font-family: 'Pixelify Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 32px;
-    letter-spacing: -0.05rem;
-    background-color: white;
-    border: 5px solid black;
-    opacity: 1;
-    height: calc(var(--number-of-items) * 48px + 20px);
-    overflow-y: scroll;
-    overflow-x: hidden;
+	--number-of-items: 9;
+	background-color: white;
+	padding: 10px 40px 10px 30px;
+	font-family: 'Pixelify Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2rem;
+	letter-spacing: -0.05rem;
+	background-color: white;
+	border: 5px solid black;
+	opacity: 1;
+	height: calc(var(--number-of-items) * 48px + 20px);
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .unselectedButtons,
 .selectedButtons {
-    display: block;
-    border: none;
-    padding: 0;
+	display: block;
+	border: none;
+	padding: 0;
 }
 
 .unselectedButtons:hover {
-    color: lightcoral;
+	color: rgb(212, 113, 113);
+	text-decoration: underline;
 }
 
 .unselectedButtons::after {
-    content: ' <-';
-    visibility: hidden;
+	content: ' <-';
+	visibility: hidden;
 }
 
 .selectedButtons {
-    color: lightcoral;
+	color: rgb(212, 113, 113);
+	text-decoration: underline;
 }
 
 .selectedButtons::before {
-    content: '-> ';
-    color: lightcoral;
+	content: '-> ';
+	color: rgb(212, 113, 113);
+	text-decoration: underline;
 }
