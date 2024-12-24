@@ -4,14 +4,11 @@ import CheckoutItem from '../CheckoutItem';
 import useFetchData from '../useFetchData';
 import userEvent from '@testing-library/user-event';
 
-// Mock the `useFetchData` hook
 vi.mock('../useFetchData', () => ({
-	// __esModule: true, // Ensure it's treated as a module
 	default: vi.fn(), // Mock the default export
 }));
 
 describe('checkout item', () => {
-	// Mock the `useFetchData` hook to return a controlled title and price
 	useFetchData.mockReturnValue({
 		title: 'Mocked Item',
 		price: 100,
@@ -19,14 +16,12 @@ describe('checkout item', () => {
 
 	test('Should render correct title', () => {
 		const mockItem = { id: 1, amount: 5 };
-		// Create mock values for the context
 		const mockCartItems = [
 			{ id: 1, amount: 5 },
 			{ id: 2, amount: 4 },
 		];
 		const setMockCartItems = vi.fn();
 
-		// Render the component
 		render(
 			<CheckoutItem
 				item={mockItem}
@@ -35,7 +30,6 @@ describe('checkout item', () => {
 			/>,
 		);
 
-		// Check if the heading is in the document
 		const titleElement = screen.getByText('Mocked Item');
 		expect(titleElement).toBeInTheDocument();
 
@@ -48,7 +42,6 @@ describe('checkout item', () => {
 
 	test('Should render button and handle callback', async () => {
 		const mockItem = { id: 1, amount: 5 };
-		// Create mock values for the context
 		const mockCartItems = [
 			{ id: 1, amount: 5 },
 			{ id: 2, amount: 4 },
@@ -58,7 +51,6 @@ describe('checkout item', () => {
 		const user = userEvent.setup();
 		const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
 
-		// Render the component
 		render(
 			<CheckoutItem
 				item={mockItem}
@@ -67,7 +59,6 @@ describe('checkout item', () => {
 			/>,
 		);
 
-		// Check if the heading is in the document
 		const buttonElement = screen.getByRole('button');
 		expect(buttonElement).toHaveTextContent('DELETE');
 

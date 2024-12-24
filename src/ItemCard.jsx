@@ -21,6 +21,7 @@ const ItemCard = ({
 						name='amount'
 						value={currentInput}
 						onChange={(e) => handleInputChange(e.target.value)}
+						data-testid='inputAmount'
 					></input>
 					<br></br>
 					<button
