@@ -26,7 +26,7 @@ const Checkout = () => {
 	};
 
 	const handleBuy = () => {
-		alert('Purchase succesful!');
+		alert('Purchase successful!');
 	};
 
 	return (
