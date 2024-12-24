@@ -1,4 +1,4 @@
-import { describe, test, expect, vi, beforeEach } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 import { screen, render } from '@testing-library/react';
 import CheckoutItem from '../CheckoutItem';
 import useFetchData from '../useFetchData';
