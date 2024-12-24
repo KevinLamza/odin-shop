@@ -27,6 +27,7 @@ const Checkout = () => {
 
 	const handleBuy = () => {
 		alert('Purchase successful!');
+		console.log('Purchase successful!');
 	};
 
 	return (
@@ -34,7 +35,7 @@ const Checkout = () => {
 			<div className={styles.checkout}>
 				<h2>CHECKOUT</h2>
 				{cartItems.length === 0 ? (
-					'NO ITEMS IN CART'
+					<span data-testid='empty-cart'>NO ITEMS IN CART</span>
 				) : (
 					<>
 						<table>
@@ -80,6 +81,7 @@ const Checkout = () => {
 							className={styles.checkoutButton}
 							onClick={handleBuy}
 							aria-label={`Confirm purchase`}
+							data-testid='checkout-button'
 						>
 							BUY
 						</button>

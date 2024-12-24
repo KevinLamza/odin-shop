@@ -42,7 +42,7 @@ const CheckoutItem = ({ item, cartItems, setCartItems }) => {
 					<button
 						className={styles.checkoutButton}
 						onClick={() => handleButtonClick()}
-						aria-label={`Buy ${amount} of ${title} for ${amount * price}`}
+						aria-label={`Delete ${amount} of ${title}`}
 					>
 						DELETE
 					</button>
