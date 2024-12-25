@@ -35,7 +35,7 @@ const NavBar = ({
 								: styles.unselected
 						}
 						onClick={() => handleNavClick('/')}
-						aria-label={`Go to home page}`}
+						aria-label={`Go to home page`}
 					>
 						HOME
 					</button>
@@ -46,7 +46,7 @@ const NavBar = ({
 								: styles.unselected
 						}
 						onClick={() => handleNavClick('/shop/1')}
-						aria-label={`Go to shop page}`}
+						aria-label={`Go to shop page`}
 					>
 						SHOP
 					</button>
@@ -60,7 +60,7 @@ const NavBar = ({
 					onAnimationEnd={() => setWobble(0)}
 					data-wobble={wobble}
 					onClick={() => handleNavClick('/checkout')}
-					aria-label={`Go to checkout page}`}
+					aria-label={`Go to checkout page`}
 				>
 					CART ({cartItems.length})
 				</button>

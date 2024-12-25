@@ -1,7 +1,7 @@
-import { describe, test, expect, vi, beforeEach } from 'vitest';
-import { getByTestId, render, screen, waitFor } from '@testing-library/react';
+import { describe, test, expect, vi } from 'vitest';
+import { render, screen, waitFor } from '@testing-library/react';
 import SpriteCanvas from '../SpriteCanvas';
-import '@testing-library/jest-dom'; // for matchers (like toBeInTheDocument)
+import '@testing-library/jest-dom'; //
 
 describe('SpriteCanvas Component', () => {
 	test('loads image and draws it on canvas', async () => {
