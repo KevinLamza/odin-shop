@@ -14,7 +14,7 @@ const List = ({ validIds, handleListClick, currentItem }) => {
 						: styles.unselectedButtons
 				}
 				key={element}
-				aria-label={`Open shop page ${title}}`}
+				aria-label={`Open shop page ${title}`}
 			>
 				{title}
 			</button>
